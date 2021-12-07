@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Binance Trading Bot</title>
+        <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
+    <Body>
+
+        <!-- Image and text -->
+        <h1 class="display-4" style="text-align: center; width: 100%;margin-top: 1%;margin-bottom: 1%;">Binance Trading Bot</h1>
+        <nav class="navbar navbar-light bg-light">
+            <a href="#chart_btc" class="h4">Bitcoin en temps réel</a>
+            <a href="#chart_capital" class="h4">Évolution du capital</a>
+            <a href="#trade_table" class="h4">Historique des trades</a>
+            
+        </nav>
+
+        <div style="margin-top: 2%;margin-bottom: 2%;">
+            <h3 style="text-align: center; width: 100%;margin-top: 1%;margin-bottom: 1%;">Bitcoin en temps réel</h3>
+            <div id="chart_btc"></div>
+        </div>
+
+        <div style="margin-top: 2%;margin-bottom: 2%;">
+            <h3 style="text-align: center; width: 100%;margin-top: 1%;margin-bottom: 1%;">Évolution du capital [ From $10000 ]</h3>
+            <div id="chart_capital"></div>
+        </div>
+
+        <div style="margin-top: 2%;margin-bottom: 2%;">
+            <h3 style="text-align: center; width: 100%;margin-top: 1%;margin-bottom: 1%;">Historique des trades</h3>
+            <div id="trade_table"></div>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">TIMESTAMP</th>
+                    <th scope="col">PRIX ACHAT</th>
+                    <th scope="col">PRIX VENTE</th>
+                    <th scope="col">CAPITAL</th>
+                    <th scope="col">PERFORMANCE RSI [%]</th>
+                    <th scope="col">PERFORMANCE MACD [%]</th>
+                    <th scope="col">PERFORMANCE EWO [%]</th>
+                    <th scope="col">JUGEMENT SUR LE TRADE RSI [/1]</th>
+                    <th scope="col">JUGEMENT SUR LE TRADE MACD [/1]</th>
+                    <th scope="col">JUGEMENT SUR LE TRADE EWO [/1]</th>
+                  </tr>
+                </thead>
+
+                <tbody id="trades_tab">
+                </tbody>
+              </table>
+        </div>
+       
+
+        <script src="{{ url_for('static', filename='chart.js') }}"></script>
+    </Body>
+</html>
